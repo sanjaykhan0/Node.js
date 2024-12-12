@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+</head>
+<body>
+    <h1>Server Start</h1>
+
+    <form action="/addData" method="post">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="number" name="age" placeholder="Age" required>
+        <button type="submit">Add Data</button>
+    </form>
+
+    <% student.map((e) => { %>
+        <ul>
+            <li>ID: <%= e.id %></li>
+            <li>Name: <%= e.name %></li>
+            <li>Age: <%= e.age %></li>
+            <li>
+                <button>
+                    <a href="/EditData/<%= e.id %>">Edit</a>
+                </button>
+                <button>
+                    <a href="/deleteData?id=<%= e.id %>">Delete</a>
+                </button>
+            </li>
+        </ul>
+    <% }) %>
+</body>
+</html>
