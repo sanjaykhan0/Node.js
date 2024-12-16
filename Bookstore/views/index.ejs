@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Collection</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        /* General reset for cleaner design */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        form input, form button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        form button {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #4cae4c;
+        }
+
+        .book-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .Book-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 15vw;
+            min-width: 200px;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .Book-card:hover {
+            transform: scale(1.05);
+        }
+
+        .Book-card img {
+            width: auto;
+            height: 40vh;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .Book-card h1 {
+            font-size: 1.2rem;
+            margin: 10px;
+            color: #333;
+        }
+
+        .Book-card h5 {
+            font-size: 1rem;
+            margin: 5px 10px;
+            color: #777;
+        }
+
+        .Book-card h2 {
+            font-size: 1.2rem;
+            margin: 10px;
+            color: #5cb85c;
+        }
+
+        .Book-card h3 {
+            font-size: 1rem;
+            margin: 5px 10px;
+            color: #999;
+        }
+
+        .Book-card span {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+        }
+
+        .Book-card button {
+            padding: 8px 12px;
+            background-color: #f0ad4e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .Book-card button:hover {
+            background-color: #ec971f;
+        }
+
+        .Book-card button:last-child {
+            background-color: #d9534f;
+        }
+
+        .Book-card button:last-child:hover {
+            background-color: #c9302c;
+        }
+        .add-book{
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+        .search{
+            width: 30%;
+        }
+        a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s, transform 0.3s;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #000;
+    transform: scale(1.05); 
+}
+
+a:focus {
+    outline: 2px solid #007BFF; 
+    text-decoration: underline;
+    color: #000;
+}
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Book Collection</h1>
+    <!-- search data  -->
+       <form action="/searchData" method="post">
+           <input type="text" placeholder="search..." name="search" class="search">
+           <button type="submit">search</button>
+           <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Add Book</button>
+       </form>
+
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Add your new book</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <form action="/addData" method="post" class="add-book">
+    <input type="text" list="image" name="image" placeholder="Enter Image URL" required>
+    <input type="text" name="book" placeholder="Enter Book Name" required>
+    <input type="text" name="author" placeholder="Enter Author" required>
+    <input type="text" name="price" placeholder="Enter Price" required>
+    <input type="date" name="date" placeholder="Enter Release Date" required>
+    <button type="submit">Add Book</button>
+</form>
+<datalist id="image">
+    <option value="https://m.media-amazon.com/images/I/81CJ-UOykQL.jpg">
+        <option value="https://static.periplus.com/uX0d8ebbXU2oYduBDKf0B90k3XxeH70BQnqUGnkvSB81G.OitN5jZK.Zf.jizfzZQ--">
+    <option value="https://m.media-amazon.com/images/I/817c+Zau4UL._SY466_.jpg">
+    <option value="https://magazineshop.us/cdn/shop/files/SIP-232806_NoUPC_A1.jpg?v=1686847432">
+    <option value="https://rukminim2.flixcart.com/image/850/1000/xif0q/regionalbooks/b/j/n/one-piece-2-manga-comic-anime-original-imagh2nwjd9gmguz.jpeg?q=90&crop=false">
+    <option value="https://rukminim2.flixcart.com/image/850/1000/xif0q/regionalbooks/f/f/z/naruto-1-manga-comic-anime-original-imagh2nffsyqxmyk.jpeg?q=20&crop=false">
+    <option value="https://thecomicbookstore.in/wp-content/uploads/2022/09/TCBS2495-1-scaled.jpg">
+    <option value="https://m.media-amazon.com/images/I/91FPoNmEUsL._UF1000,1000_QL80_.jpg">
+    <option value="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781421506364/dragon-ball-z-vol-26-9781421506364_hr.jpg">
+  </datalist>
+</div>
+
+
+
+
+    <div class="book-container">
+        <% Book.map((e) => { %>
+        <div class="Book-card">
+            <img src="<%= e.image %>" alt="Book Image">
+            <h1><%= e.book %></h1>
+            <h5>by <%= e.author %></h5>
+            <h2>$<%= e.price %></h2>
+            <h3>Released: <%= e.date %></h3>
+            <span>
+                <button><a href="/editData?id=<%=e.id%>">Edit</a></button>
+                <button><a href="/deleteData?id=<%=e.id%>">Delete</a></button>
+            </span>
+        </div>
+        <% }) %>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+ 
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+      * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        form input, form button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        form button {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #4cae4c;
+        }
+
+</style>
+<body>
+    <form action="/updateData" method="post">
+        <input type="text" value="<%=singleBook.id%>" name="id" placeholder="Enter" hidden>
+        <input type="text" value="<%=singleBook.image%>" name="image" placeholder="Enter Image URL" required>
+        <input type="text" value="<%=singleBook.book%>" name="book" placeholder="Enter Book Name" required>
+        <input type="text" value="<%=singleBook.author%>" name="author" placeholder="Enter Author" required>
+        <input type="text" value="<%=singleBook.price%>" name="price" placeholder="Enter Price" required>
+        <input type="date" value="<%=singleBook.date%>" name="date" placeholder="Enter Release Date" required>
+        <button type="submit">update Book</button>
+    </form>
+</body>
+</html>
