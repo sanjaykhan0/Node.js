@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Book</title>
+    <style>
+        /* General reset for cleaner design */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 30%; /* Added width to make the form smaller */
+            margin: 0 auto; /* Added margin to center the form */
+        }
+
+        form input, form button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        form button {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #4cae4c;
+        }
+
+        /* Image styling */
+        img {
+            width: auto; /* Changed to fit content */
+            height: auto; /* Changed to fit content */
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Update Book</h1>
+    <form action="/updateData" method="post">
+        <input type="text" value="<%=data.id%>" name="id" placeholder="Enter" hidden>
+        <input type="text" value="<%=data.image%>" name="image" placeholder="Enter Image URL" required>
+        <img src="<%=data.image%>" list="image" alt="Book Image">
+        <input type="text" value="<%=data.book%>" name="book" placeholder="Enter Book Name" required>
+        <input type="text" value="<%=data.author%>" name="author" placeholder="Enter Author" required>
+        <input type="text" value="<%=data.price%>" name="price" placeholder="Enter Price" required>
+        <input type="date" value="<%=data.date%>" name="date" placeholder="Enter Release Date" required>
+        <button type="submit">Update Book</button>
+    </form>
+    <datalist id="image">
+        <option value="https://m.media-amazon.com/images/I/81CJ-UOykQL.jpg"/>
+            <option value="https://static.periplus.com/uX0d8ebbXU2oYduBDKf0B90k3XxeH70BQnqUGnkvSB81G.OitN5jZK.Zf.jizfzZQ--"/>
+        <option value="https://m.media-amazon.com/images/I/817c+Zau4UL._SY466_.jpg"/>
+        <option value="https://magazineshop.us/cdn/shop/files/SIP-232806_NoUPC_A1.jpg?v=1686847432"/>
+        <option value="https://rukminim2.flixcart.com/image/850/1000/xif0q/regionalbooks/b/j/n/one-piece-2-manga-comic-anime-original-imagh2nwjd9gmguz.jpeg?q=90&crop=false"/>
+        <option value="https://rukminim2.flixcart.com/image/850/1000/xif0q/regionalbooks/f/f/z/naruto-1-manga-comic-anime-original-imagh2nffsyqxmyk.jpeg?q=20&crop=false"/>
+        <option value="https://thecomicbookstore.in/wp-content/uploads/2022/09/TCBS2495-1-scaled.jpg"/>
+        <option value="https://m.media-amazon.com/images/I/91FPoNmEUsL._UF1000,1000_QL80_.jpg"/>
+        <option value="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781421506364/dragon-ball-z-vol-26-9781421506364_hr.jpg"/>
+      </datalist>
+    
+</body>
+</html>
