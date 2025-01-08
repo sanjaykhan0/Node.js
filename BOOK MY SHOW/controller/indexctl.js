@@ -14,17 +14,17 @@ module.exports.AddPage = async(req,res)=>{
 module.exports.AddData = async(req,res)=>{
     req.body.image = req.file.path
     let data = await AdminSchema.create(req.body);
-    data && res.redirect("/"); 
+    res.redirect("/"); 
 }
 module.exports.DeleteData = async(req,res)=>{
     let singleData = await AdminSchema.findById(req.query.id)
    fs.unlinkSync(singleData.image)
     let data = await AdminSchema.findByIdAndDelete(req.query.id);
-    data && res.redirect("/");  
+    res.redirect("/");  
 }
 module.exports.EditPage = async(req,res)=>{
     let data = await AdminSchema.findById(req.query.id)
-    data && res.render("editmovie",{data});
+    res.render("editmovie",{data});
 }
 module.exports.UpdateData = async(req,res)=>{
     let img = ""
@@ -33,5 +33,5 @@ module.exports.UpdateData = async(req,res)=>{
     req.file && fs.unlinkSync(singleData.image)
     req.body.image = img
     let data = await AdminSchema.findByIdAndUpdate(req.body.id,req.body)
-    data && res.redirect("/");     
+    res.redirect("/");     
 }
