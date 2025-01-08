@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Movie</title>
+    <link rel="stylesheet" href="../public/editPage.css">
+</head>
+
+<body
+    style="background-image: url(https://wallpapers.com/images/hd/cinema-theater-white-screen-for-presentations-4x0mjv0zael4msur.jpg)
+    
+    ;background-position: center;background-repeat: no-repeat;background-size: cover;height: 100vh;display: flex;justify-content: center;margin-top: 17%;">
+    <div class="form-container"
+        style="display: flex;height: 300px; width: 300px;flex-direction: column;align-items: center;justify-content: center;">
+        <h1 style="margin-top: 60px;margin-left: -40%;">Edit Movie</h1>
+        <form action="/update" method="post" enctype="multipart/form-data">
+            <input type="text" name="id" value="<%=data.id%>" hidden>
+
+            <label for="image" class="file-label">
+                <input type="file" name="image" id="image">
+            </label>
+
+            <input type="text" placeholder="Movie Name" name="name" value="<%=data.name%>" required
+                style="margin-top: 10px;">
+
+            <input type="text" placeholder="Title" name="title" value="<%=data.title%>" required
+                style="margin-top: 10px;">
+            <br>
+            <button type="submit"
+                style="background-color: brown;height: 30px;width: 80px;color: aliceblue;border-radius: 8px;border: transparent; margin-top: 10px;margin-left: 20%;">Update</button>
+
+            <div class="image-preview">
+                <h2 style="margin-left: 5%;">previous image</h2>
+                <img src="<%=data.image%>" alt="Movie Poster" height="200px" style="margin-left: 10%;">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
