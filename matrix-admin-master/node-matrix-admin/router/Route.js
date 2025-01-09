@@ -3,10 +3,11 @@ const route = express.Router()
 const ctl = require("../controller/indexCTL")
 
 
-
-route.get("/",ctl.indexPage)
-route.get("/views/Form-basic.ejs",ctl.FormBasic)
-route.get("/views/form-wizard.ejs",ctl.formWizard)
+route.get("/",ctl.loginPage)
+route.get("/dashboard", ctl.indexPage)
+route.get("/FormPage", ctl.FormBasic)
+route.get("/tables", ctl.tablesPage)
+route.post("/addData",ctl.AddData)
 
 
 

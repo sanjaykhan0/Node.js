@@ -12,8 +12,10 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.png">
     <title>Matrix Template - The Ultimate Multipurpose admin template</title>
     <!-- Custom CSS -->
-    <link href="/assets/libs/jquery-steps/jquery.steps.css" rel="stylesheet">
-    <link href="/assets/libs/jquery-steps/steps.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/libs/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/libs/jquery-minicolors/jquery.minicolors.css">
+    <link rel="stylesheet" type="text/css" href="/assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/libs/quill/dist/quill.snow.css">
     <link href="/dist/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -222,60 +224,7 @@
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
-        <aside class="left-sidebar" data-sidebarbg="skin5">
-            <!-- Sidebar scroll-->
-            <div class="scroll-sidebar">
-                <!-- Sidebar navigation-->
-                <nav class="sidebar-nav">
-                    <ul id="sidebarnav" class="p-t-30">
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="charts.html" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">Charts</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="widgets.html" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Widgets</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="tables.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Tables</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="grid.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Full Width</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Forms </span></a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="form-basic.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Form Basic </span></a></li>
-                                <li class="sidebar-item"><a href="form-wizard.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Form Wizard </span></a></li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages-buttons.html" aria-expanded="false"><i class="mdi mdi-relative-scale"></i><span class="hide-menu">Buttons</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Icons </span></a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="mdi mdi-emoticon"></i><span class="hide-menu"> Material Icons </span></a></li>
-                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="mdi mdi-emoticon-cool"></i><span class="hide-menu"> Font Awesome Icons </span></a></li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages-elements.html" aria-expanded="false"><i class="mdi mdi-pencil"></i><span class="hide-menu">Elements</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-move-resize-variant"></i><span class="hide-menu">Addons </span></a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="index2.html" class="sidebar-link"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu"> Dashboard-2 </span></a></li>
-                                <li class="sidebar-item"><a href="pages-gallery.html" class="sidebar-link"><i class="mdi mdi-multiplication-box"></i><span class="hide-menu"> Gallery </span></a></li>
-                                <li class="sidebar-item"><a href="pages-calendar.html" class="sidebar-link"><i class="mdi mdi-calendar-check"></i><span class="hide-menu"> Calendar </span></a></li>
-                                <li class="sidebar-item"><a href="pages-invoice.html" class="sidebar-link"><i class="mdi mdi-bulletin-board"></i><span class="hide-menu"> Invoice </span></a></li>
-                                <li class="sidebar-item"><a href="pages-chat.html" class="sidebar-link"><i class="mdi mdi-message-outline"></i><span class="hide-menu"> Chat Option </span></a></li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-key"></i><span class="hide-menu">Authentication </span></a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="authentication-login.html" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Login </span></a></li>
-                                <li class="sidebar-item"><a href="authentication-register.html" class="sidebar-link"><i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Register </span></a></li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-alert"></i><span class="hide-menu">Errors </span></a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="error-403.html" class="sidebar-link"><i class="mdi mdi-alert-octagon"></i><span class="hide-menu"> Error 403 </span></a></li>
-                                <li class="sidebar-item"><a href="error-404.html" class="sidebar-link"><i class="mdi mdi-alert-octagon"></i><span class="hide-menu"> Error 404 </span></a></li>
-                                <li class="sidebar-item"><a href="error-405.html" class="sidebar-link"><i class="mdi mdi-alert-octagon"></i><span class="hide-menu"> Error 405 </span></a></li>
-                                <li class="sidebar-item"><a href="error-500.html" class="sidebar-link"><i class="mdi mdi-alert-octagon"></i><span class="hide-menu"> Error 500 </span></a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-                <!-- End Sidebar navigation -->
-            </div>
-            <!-- End Sidebar scroll-->
-        </aside>
+<%-include('asidebar')%>
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
@@ -289,7 +238,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Form Wizard</h4>
+                        <h4 class="page-title">Form Basic</h4>
                         <div class="ml-auto text-right">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
@@ -311,51 +260,99 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <div class="card">
-                    <div class="card-body wizard-content">
-                        <h4 class="card-title">Basic Form Example</h4>
-                        <h6 class="card-subtitle"></h6>
-                        <form id="example-form" action="#" class="m-t-40">
-                            <div>
-                                <h3>Account</h3>
-                                <section>
-                                    <label for="userName">User name *</label>
-                                    <input id="userName" name="userName" type="text" class="required form-control">
-                                    <label for="password">Password *</label>
-                                    <input id="password" name="password" type="text" class="required form-control">
-                                    <label for="confirm">Confirm Password *</label>
-                                    <input id="confirm" name="confirm" type="text" class="required form-control">
-                                    <p>(*) Mandatory</p>
-                                </section>
-                                <h3>Profile</h3>
-                                <section>
-                                    <label for="name">First name *</label>
-                                    <input id="name" name="name" type="text" class="required form-control">
-                                    <label for="surname">Last name *</label>
-                                    <input id="surname" name="surname" type="text" class="required form-control">
-                                    <label for="email">Email *</label>
-                                    <input id="email" name="email" type="text" class="required email form-control">
-                                    <label for="address">Address</label>
-                                    <input id="address" name="address" type="text" class=" form-control">
-                                    <p>(*) Mandatory</p>
-                                </section>
-                                <h3>Hints</h3>
-                                <section>
-                                    <ul>
-                                        <li>Foo</li>
-                                        <li>Bar</li>
-                                        <li>Foobar</li>
-                                    </ul>
-                                </section>
-                                <h3>Finish</h3>
-                                <section>
-                                    <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required">
-                                    <label for="acceptTerms">I agree with the Terms and Conditions.</label>
-                                </section>
-                            </div>
-                        </form>
+                <div class="row">
+                    <div class="col-md-6">
+                        
+                        <div class="card">
+                            <form class="form-horizontal" action="/addData" method="post" enctype="multipart/form-data">
+                                <div class="card-body">
+                                    <h4 class="card-title">Personal Info</h4>
+                                    <!-- First Name -->
+                                    <div class="form-group row">
+                                        <label for="fname" class="col-sm-3 text-right control-label col-form-label">First Name</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="fname" class="form-control" id="fname" placeholder="First Name Here" required>
+                                        </div>
+                                    </div>
+                                    <!-- Last Name -->
+                                    <div class="form-group row">
+                                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Last Name</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="lname" class="form-control" id="lname" placeholder="Last Name Here" required>
+                                        </div>
+                                    </div>
+                                    <!-- Email -->
+                                    <div class="form-group row">
+                                        <label for="email" class="col-sm-3 text-right control-label col-form-label">Email</label>
+                                        <div class="col-sm-9">
+                                            <input type="email" name="email" class="form-control" id="email" placeholder="Email" required>
+                                        </div>
+                                    </div>
+                                    <!-- Password -->
+                                    <div class="form-group row">
+                                        <label for="password" class="col-sm-3 text-right control-label col-form-label">Password</label>
+                                        <div class="col-sm-9">
+                                            <input type="password" name="password" class="form-control" id="password" placeholder="Password Here" autocomplete="new-password" required>
+                                        </div>
+                                    </div>
+                                    <!-- Gender -->
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 text-right control-label col-form-label">Gender</label>
+                                        <div class="col-sm-9">
+                                            <input type="radio" name="gender" value="male" id="gender-male" required>
+                                            <label for="gender-male">Male</label>
+                                            <input type="radio" name="gender" value="female" id="gender-female" required>
+                                            <label for="gender-female">Female</label>
+                                        </div>
+                                    </div>
+                                    <!-- Language -->
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 text-right control-label col-form-label">Language</label>
+                                        <div class="col-sm-9">
+                                            <input type="checkbox" name="language" value="english" id="language-english">
+                                            <label for="language-english">English</label>
+                                            <input type="checkbox" name="language" value="hindi" id="language-hindi">
+                                            <label for="language-hindi">Hindi</label>
+                                            <input type="checkbox" name="language" value="gujarati" id="language-gujarati">
+                                            <label for="language-gujarati">Gujarati</label>
+                                        </div>
+                                    </div>
+                                    <!-- Country -->
+                                    <div class="form-group row">
+                                        <label for="country" class="col-sm-3 text-right control-label col-form-label">Country</label>
+                                        <div class="col-sm-9">
+                                            <select name="country" id="country" class="form-control" required>
+                                                <option value="">Select Country</option>
+                                                <option value="india">India</option>
+                                                <option value="japan">Japan</option>
+                                                <option value="usa">USA</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!-- File Upload -->
+                                    <div class="form-group row">
+                                        <label for="image" class="col-sm-3 text-right control-label col-form-label">File</label>
+                                        <div class="col-sm-9">
+                                            <input type="file" name="image" id="image" class="form-control-file" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border-top">
+                                    <div class="card-body">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                        </div>
+                       
+                       
+
                     </div>
+                  
                 </div>
+                <!-- editor -->
+                
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
@@ -403,37 +400,58 @@
     <script src="dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="dist/js/custom.min.js"></script>
-    <!-- this page js -->
-    <script src="assets/libs/jquery-steps/build/jquery.steps.min.js"></script>
-    <script src="assets/libs/jquery-validation/dist/jquery.validate.min.js"></script>
+    <!-- This Page JS -->
+    <script src="assets/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+    <script src="dist/js/pages/mask/mask.init.js"></script>
+    <script src="assets/libs/select2/dist/js/select2.full.min.js"></script>
+    <script src="assets/libs/select2/dist/js/select2.min.js"></script>
+    <script src="assets/libs/jquery-asColor/dist/jquery-asColor.min.js"></script>
+    <script src="assets/libs/jquery-asGradient/dist/jquery-asGradient.js"></script>
+    <script src="assets/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js"></script>
+    <script src="assets/libs/jquery-minicolors/jquery.minicolors.min.js"></script>
+    <script src="assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="assets/libs/quill/dist/quill.min.js"></script>
     <script>
-        // Basic Example with form
-    var form = $("#example-form");
-    form.validate({
-        errorPlacement: function errorPlacement(error, element) { element.before(error); },
-        rules: {
-            confirm: {
-                equalTo: "#password"
-            }
-        }
-    });
-     form.children("div").steps({
-        headerTag: "h3",
-        bodyTag: "section",
-        transitionEffect: "slideLeft",
-        onStepChanging: function(event, currentIndex, newIndex) {
-            form.validate().settings.ignore = ":disabled,:hidden";
-            return form.valid();
-        },
-        onFinishing: function(event, currentIndex) {
-            form.validate().settings.ignore = ":disabled";
-            return form.valid();
-        },
-        onFinished: function(event, currentIndex) {
-            alert("Submitted!");
-        }
-    });
+        //***********************************//
+        // For select 2
+        //***********************************//
+        $(".select2").select2();
 
+        /*colorpicker*/
+        $('.demo').each(function() {
+        //
+        // Dear reader, it's actually very easy to initialize MiniColors. For example:
+        //
+        //  $(selector).minicolors();
+        //
+        // The way I've done it below is just for the demo, so don't get confused
+        // by it. Also, data- attributes aren't supported at this time...they're
+        // only used for this demo.
+        //
+        $(this).minicolors({
+                control: $(this).attr('data-control') || 'hue',
+                position: $(this).attr('data-position') || 'bottom left',
+
+                change: function(value, opacity) {
+                    if (!value) return;
+                    if (opacity) value += ', ' + opacity;
+                    if (typeof console === 'object') {
+                        console.log(value);
+                    }
+                },
+                theme: 'bootstrap'
+            });
+
+        });
+        /*datwpicker*/
+        jQuery('.mydatepicker').datepicker();
+        jQuery('#datepicker-autoclose').datepicker({
+            autoclose: true,
+            todayHighlight: true
+        });
+        var quill = new Quill('#editor', {
+            theme: 'snow'
+        });
 
     </script>
 </body>
