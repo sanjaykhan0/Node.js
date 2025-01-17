@@ -75,7 +75,7 @@
             <h4 class="card-title" style="text-align: center; margin-bottom: 20px; color: #333;">Personal Info</h4>
           
             <div class="form-group row" style="margin-bottom: 15px;">
-                <label for="fname" class="col-sm-3 text-right control-label col-form-label" style="font-weight: bold;">First Name</label>
+                <!-- <label for="fname" class="col-sm-3 text-right control-label col-form-label" style="font-weight: bold;">First Name</label> -->
                 <div class="col-sm-9">
                   <input type="text" name="id" value="<%=data.id%>" hidden class="form-control" id="fname" placeholder="First Name Here" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
                 </div>
@@ -111,9 +111,9 @@
             <div class="form-group row" style="margin-bottom: 15px;">
                 <label class="col-sm-3 text-right control-label col-form-label" style="font-weight: bold;">Gender</label>
                 <div class="col-sm-9">
-                    <input type="radio" name="gender" value="" <%=data.gender=="male"?"checked":""%>  id="gender-male" required>
+                    <input type="radio" name="gender" value="male" <%=data.gender=="male"?"checked":""%>  id="gender-male" required>
                     <label for="gender-male" style="margin-right: 15px;">Male</label>
-                    <input type="radio" name="gender" value="" id="gender-female" <%=data.gender=="female"?"checked":""%> required>
+                    <input type="radio" name="gender" value="female" id="gender-female" <%=data.gender=="female"?"checked":""%> required>
                     <label for="gender-female">Female</label>
                 </div>
             </div>
@@ -146,7 +146,7 @@
                 <label for="image" class="col-sm-3 text-right control-label col-form-label" style="font-weight: bold;">File</label>
                 <div class="col-sm-9">
                     <input type="file" value="<%=data.image%>" name="image" id="image" class="form-control-file"  style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
-                    <img src="<%=data.image%>" alt="">
+                    <img src="<%=data.image%>" style="height: max-content;" alt="">
                 </div>
             </div>
         </div>

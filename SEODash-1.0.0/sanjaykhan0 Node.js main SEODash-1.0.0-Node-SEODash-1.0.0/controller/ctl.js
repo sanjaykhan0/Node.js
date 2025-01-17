@@ -1,17 +1,51 @@
 const Schema  = require("../model/schema");
 const fs = require("fs")
 
+module.exports.loginPage = (req,res)=>{
+    res.render('login')
+
+    // req.cookies.user?res.redirect("dashboard"):res.render("login")
+}
+
+module.exports.loginData = async(req,res)=>{
+    const user = await Schema.findOne({email:req.body.email})
+    if(user){
+        if(user.password === req.body.password){
+            res.cookie("userData",user)
+            res.render('index')
+
+        }
+        else{
+            res.redirect("/")
+        }
+    }
+    else{
+        res.redirect("/")
+    }
+    console.log(req.body)
+}
+
 module.exports.indexPage = (req,res)=>{
-    res.render('index')
+    // res.render('index')
+    req.cookies.user?res.render("index"):res.redirect("/")
+
 }
 module.exports.formPage=(req,res)=>{
-    res.render('form')
+    // res.render('form')
+    req.cookies.user?res.render("form"):res.redirect("/")
+
 }
 module.exports.tablePage=async(req,res)=>{
-    await Schema.find({}).then((data)=>{
-        res.render('table',{data})
+    if( req.cookies.user){
 
-    })
+        await Schema.find({}).then((data)=>{
+            res.render('table',{data})
+            
+        })
+    }
+    else{
+        res.redirect("/")
+    }
 }
 module.exports.addData= async(req,res)=>{
     req.body.image = req.file.path
@@ -39,7 +73,7 @@ module.exports.updateData=async(req,res)=>{
     let img = ""
     // console.log("edit",req.body.id)
     let singleData =  await Schema.findById(req.body.id)
-    req.file?img=req.file.path:img = singleData
+    req.file?img=req.file.path:img = singleData.image
     req.file && fs.unlinkSync(singleData.image)
     req.body.image = img
     await Schema.findByIdAndUpdate(req.body.id,req.body).then((data)=>{
