@@ -79,3 +79,7 @@ module.exports.updateData = async (req, res) => {
         res.redirect('/tablePage')
     })
 }
+module.exports.logout= async (req,res)=>{
+    res.clearCookie("user")
+    res.redirect("/")
+}
