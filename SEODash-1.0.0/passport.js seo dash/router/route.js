@@ -17,7 +17,8 @@ route.get("/deleteData",ctl.deleteData)
 route.get("/editData",ctl.editData)
 route.post("/updateData",multer,ctl.updateData)
 route.get("/logout",ctl.logout)
-
+route.get("/changePass",passport.checkAuth,ctl.changePass)
+route.post("/changePass",passport.checkAuth,ctl.NewchangePass)
 
 
 
